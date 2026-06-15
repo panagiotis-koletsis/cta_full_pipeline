@@ -1,0 +1,147 @@
+1172
+✓ Saved prototype for 'Book/description' (averaged 11 columns)
+✓ Saved prototype for 'Book/name' (averaged 18 columns)
+✓ Saved prototype for 'BookFormatType' (averaged 13 columns)
+✓ Saved prototype for 'Boolean' (averaged 10 columns)
+✓ Saved prototype for 'Brand' (averaged 10 columns)
+✓ Saved prototype for 'CategoryCode' (averaged 14 columns)
+✓ Saved prototype for 'CoordinateAT' (averaged 13 columns)
+✓ Saved prototype for 'Country' (averaged 26 columns)
+✓ Saved prototype for 'CreativeWork' (averaged 10 columns)
+✓ Saved prototype for 'CreativeWork/name' (averaged 14 columns)
+✓ Saved prototype for 'CreativeWorkSeries' (averaged 10 columns)
+✓ Saved prototype for 'Date' (averaged 26 columns)
+✓ Saved prototype for 'DateTime' (averaged 19 columns)
+✓ Saved prototype for 'DayOfWeek' (averaged 10 columns)
+✓ Saved prototype for 'Distance' (averaged 10 columns)
+✓ Saved prototype for 'Duration' (averaged 33 columns)
+✓ Saved prototype for 'EducationalOccupationalCredential' (averaged 19 columns)
+✓ Saved prototype for 'Energy' (averaged 10 columns)
+✓ Saved prototype for 'Event/description' (averaged 10 columns)
+✓ Saved prototype for 'Event/name' (averaged 13 columns)
+✓ Saved prototype for 'EventAttendanceModeEnumeration' (averaged 10 columns)
+✓ Saved prototype for 'EventStatusType' (averaged 13 columns)
+✓ Saved prototype for 'GenderType' (averaged 10 columns)
+✓ Saved prototype for 'Hotel/description' (averaged 10 columns)
+✓ Saved prototype for 'Hotel/name' (averaged 18 columns)
+✓ Saved prototype for 'IdentifierAT' (averaged 11 columns)
+✓ Saved prototype for 'ItemAvailability' (averaged 16 columns)
+✓ Saved prototype for 'ItemList' (averaged 11 columns)
+✓ Saved prototype for 'JobPosting/description' (averaged 10 columns)
+✓ Saved prototype for 'JobPosting/name' (averaged 13 columns)
+✓ Saved prototype for 'Language' (averaged 10 columns)
+✓ Saved prototype for 'LocalBusiness/name' (averaged 14 columns)
+✓ Saved prototype for 'LocationFeatureSpecification' (averaged 10 columns)
+✓ Saved prototype for 'Mass' (averaged 24 columns)
+✓ Saved prototype for 'MonetaryAmount' (averaged 10 columns)
+✓ Saved prototype for 'Movie/description' (averaged 10 columns)
+✓ Saved prototype for 'Movie/name' (averaged 14 columns)
+✓ Saved prototype for 'Museum/name' (averaged 10 columns)
+✓ Saved prototype for 'MusicAlbum/name' (averaged 18 columns)
+✓ Saved prototype for 'MusicArtistAT' (averaged 16 columns)
+✓ Saved prototype for 'MusicRecording/name' (averaged 13 columns)
+✓ Saved prototype for 'Number' (averaged 15 columns)
+✓ Saved prototype for 'OccupationalExperienceRequirements' (averaged 13 columns)
+✓ Saved prototype for 'OfferItemCondition' (averaged 10 columns)
+✓ Saved prototype for 'Organization' (averaged 19 columns)
+✓ Saved prototype for 'Person/name' (averaged 25 columns)
+✓ Saved prototype for 'Photograph' (averaged 17 columns)
+✓ Saved prototype for 'Place/name' (averaged 16 columns)
+✓ Saved prototype for 'PostalAddress' (averaged 12 columns)
+✓ Saved prototype for 'Product/description' (averaged 25 columns)
+✓ Saved prototype for 'Product/name' (averaged 33 columns)
+✓ Saved prototype for 'ProductModel' (averaged 10 columns)
+✓ Saved prototype for 'QuantitativeValue' (averaged 12 columns)
+✓ Saved prototype for 'Rating' (averaged 10 columns)
+✓ Saved prototype for 'Recipe/description' (averaged 13 columns)
+✓ Saved prototype for 'Recipe/name' (averaged 11 columns)
+✓ Saved prototype for 'Restaurant/name' (averaged 18 columns)
+✓ Saved prototype for 'RestrictedDiet' (averaged 10 columns)
+✓ Saved prototype for 'Review' (averaged 10 columns)
+✓ Saved prototype for 'SportsEvent/name' (averaged 10 columns)
+✓ Saved prototype for 'SportsTeam' (averaged 12 columns)
+✓ Saved prototype for 'TVEpisode/name' (averaged 12 columns)
+✓ Saved prototype for 'Time' (averaged 21 columns)
+✓ Saved prototype for 'URL' (averaged 15 columns)
+✓ Saved prototype for 'addressLocality' (averaged 27 columns)
+✓ Saved prototype for 'addressRegion' (averaged 19 columns)
+✓ Saved prototype for 'category' (averaged 10 columns)
+✓ Saved prototype for 'currency' (averaged 27 columns)
+✓ Saved prototype for 'email' (averaged 11 columns)
+✓ Saved prototype for 'openingHours' (averaged 10 columns)
+✓ Saved prototype for 'paymentAccepted' (averaged 10 columns)
+✓ Saved prototype for 'postalCode' (averaged 22 columns)
+✓ Saved prototype for 'price' (averaged 21 columns)
+✓ Saved prototype for 'priceRange' (averaged 21 columns)
+✓ Saved prototype for 'streetAddress' (averaged 18 columns)
+✓ Saved prototype for 'telephone' (averaged 18 columns)
+✓ Saved prototype for 'unitCode' (averaged 12 columns)
+✓ Saved prototype for 'unitText' (averaged 5 columns)
+✓ Saved prototype for 'weight' (averaged 12 columns)
+train /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R2/gt/sotab_cta_train_round2.csv
+Traceback (most recent call last):
+  File "/home/kpanag/vscode/cta_full_pipeline/cta_full_pipeline.py", line 211, in <module>
+    main()
+  File "/home/kpanag/vscode/cta_full_pipeline/cta_full_pipeline.py", line 121, in main
+    prot_dict, cell_header_dict, dom_dict, model, topk_results = check_files_exist(config)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/cta_full_pipeline/cta_full_pipeline.py", line 80, in check_files_exist
+    train_catboost.main()
+  File "/home/kpanag/vscode/cta_full_pipeline/catboost/train_catboost.py", line 112, in main
+    data_preprocess.process_data()
+  File "/home/kpanag/vscode/cta_full_pipeline/catboost/data_preprocess.py", line 51, in process_data
+    embedding, col_data = embedder.get_embedding(df, gt_row)
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/cta_full_pipeline/embedder.py", line 30, in get_embedding
+    response = ollama.embed(
+               ^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/ollama/_client.py", line 415, in embed
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/ollama/_client.py", line 199, in _request
+    return cls(**self._request_raw(*args, **kwargs).json())
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/ollama/_client.py", line 139, in _request_raw
+    r = self._client.request(*args, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
+    return self.send(request, auth=auth, follow_redirects=follow_redirects)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
+    response = self._send_handling_auth(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
+    response = self._send_handling_redirects(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
+    response = self._send_single_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
+    response = transport.handle_request(request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
+    resp = self._pool.handle_request(req)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
+    raise exc from None
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
+    response = connection.handle_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
+    return self._connection.handle_request(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
+    raise exc
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
+    ) = self._receive_response_headers(**kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
+    event = self._receive_event(timeout=timeout)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
+    data = self._network_stream.read(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128, in read
+    return self._sock.recv(max_bytes)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
