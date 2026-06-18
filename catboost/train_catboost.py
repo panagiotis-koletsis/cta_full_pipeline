@@ -22,7 +22,8 @@ def parse_embedding(x):
     if pd.isna(x):
         return None
     try:
-        return np.array(ast.literal_eval(x), dtype=np.float32)
+        #return np.array(ast.literal_eval(x), dtype=np.float32)
+        return np.array(ast.literal_eval(x), dtype=np.float32)[:-1] # this removes the last which represents if the column has duplicates or not.
     except Exception as e:
         print(f"Failed to parse: {x}")
         return None
@@ -123,7 +124,6 @@ def main():
     val_df   = pd.read_csv(val_path)
     test_df  = pd.read_csv(test_path)
 
-
     #cosine_df = pd.read_csv("topk.csv")
 
     for df in [train_df, val_df, test_df]:
@@ -133,11 +133,18 @@ def main():
     val_df   = val_df.dropna(subset=["parsed_embedding"])
     test_df  = test_df.dropna(subset=["parsed_embedding"])
 
+    # print(train_df.shape, val_df.shape, test_df.shape)
+    # print(type(val_df["embedding"].iloc[0]))
+    # print(val_df["embedding"].iloc[0])
+
     X_train = np.vstack(train_df["parsed_embedding"].values)
     X_val   = np.vstack(val_df["parsed_embedding"].values)
     X_test  = np.vstack(test_df["parsed_embedding"].values)
 
+
     print(X_train.shape, X_val.shape, X_test.shape)
+    # print(X_val[0])        # first row as numpy array
+    # print(X_val[0].shape)
 
     le = LabelEncoder()
     y_train = le.fit_transform(train_df["header"])

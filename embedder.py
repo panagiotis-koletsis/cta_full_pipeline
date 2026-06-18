@@ -38,8 +38,11 @@ class Embedder:
                 embedding = np.mean(embeddings, axis=0).tolist()
         except Exception as e:
             print(f"⚠️ Embedding failed for column '{col_name}': {e} and gt_row {gt_row}")
-            #embedding = [0] * 768
-            embedding = None
+            embedding = [0] * 768
+            if self.EMBEDDING_MODEL == "snowflake-arctic-embed2:568m":
+                embedding = [0] * 1024
+            
+            #embedding = None
         return embedding, col_data
     
 
@@ -62,8 +65,8 @@ class Embedder:
         if not self.AVG:
             column_text = " | ".join(column_text)
             column_text = self.truncate_to_tokens(column_text, 7500)
-        else:
-            column_text = self.truncate_to_tokens(column_text, 7500)
+        # else:
+        #     column_text = self.truncate_to_tokens(column_text, 7500)
         
         
         return column_text, col_name, col_data

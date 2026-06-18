@@ -1,147 +1,98 @@
-1172
-✓ Saved prototype for 'Book/description' (averaged 11 columns)
-✓ Saved prototype for 'Book/name' (averaged 18 columns)
-✓ Saved prototype for 'BookFormatType' (averaged 13 columns)
-✓ Saved prototype for 'Boolean' (averaged 10 columns)
-✓ Saved prototype for 'Brand' (averaged 10 columns)
-✓ Saved prototype for 'CategoryCode' (averaged 14 columns)
-✓ Saved prototype for 'CoordinateAT' (averaged 13 columns)
-✓ Saved prototype for 'Country' (averaged 26 columns)
-✓ Saved prototype for 'CreativeWork' (averaged 10 columns)
-✓ Saved prototype for 'CreativeWork/name' (averaged 14 columns)
-✓ Saved prototype for 'CreativeWorkSeries' (averaged 10 columns)
-✓ Saved prototype for 'Date' (averaged 26 columns)
-✓ Saved prototype for 'DateTime' (averaged 19 columns)
-✓ Saved prototype for 'DayOfWeek' (averaged 10 columns)
-✓ Saved prototype for 'Distance' (averaged 10 columns)
-✓ Saved prototype for 'Duration' (averaged 33 columns)
-✓ Saved prototype for 'EducationalOccupationalCredential' (averaged 19 columns)
-✓ Saved prototype for 'Energy' (averaged 10 columns)
-✓ Saved prototype for 'Event/description' (averaged 10 columns)
+Starting Initalization...
+Computing prototype embeddings for each column...
+597
+✓ Saved prototype for 'Book/name' (averaged 27 columns)
+✓ Saved prototype for 'BookFormatType' (averaged 15 columns)
+✓ Saved prototype for 'Country' (averaged 21 columns)
+✓ Saved prototype for 'Date' (averaged 15 columns)
+✓ Saved prototype for 'DeliveryMethod' (averaged 11 columns)
+✓ Saved prototype for 'Duration' (averaged 12 columns)
 ✓ Saved prototype for 'Event/name' (averaged 13 columns)
 ✓ Saved prototype for 'EventAttendanceModeEnumeration' (averaged 10 columns)
-✓ Saved prototype for 'EventStatusType' (averaged 13 columns)
+✓ Saved prototype for 'EventStatusType' (averaged 11 columns)
 ✓ Saved prototype for 'GenderType' (averaged 10 columns)
-✓ Saved prototype for 'Hotel/description' (averaged 10 columns)
-✓ Saved prototype for 'Hotel/name' (averaged 18 columns)
-✓ Saved prototype for 'IdentifierAT' (averaged 11 columns)
-✓ Saved prototype for 'ItemAvailability' (averaged 16 columns)
-✓ Saved prototype for 'ItemList' (averaged 11 columns)
-✓ Saved prototype for 'JobPosting/description' (averaged 10 columns)
-✓ Saved prototype for 'JobPosting/name' (averaged 13 columns)
+✓ Saved prototype for 'IdentifierAT' (averaged 10 columns)
+✓ Saved prototype for 'ItemAvailability' (averaged 28 columns)
 ✓ Saved prototype for 'Language' (averaged 10 columns)
-✓ Saved prototype for 'LocalBusiness/name' (averaged 14 columns)
-✓ Saved prototype for 'LocationFeatureSpecification' (averaged 10 columns)
-✓ Saved prototype for 'Mass' (averaged 24 columns)
-✓ Saved prototype for 'MonetaryAmount' (averaged 10 columns)
-✓ Saved prototype for 'Movie/description' (averaged 10 columns)
-✓ Saved prototype for 'Movie/name' (averaged 14 columns)
-✓ Saved prototype for 'Museum/name' (averaged 10 columns)
-✓ Saved prototype for 'MusicAlbum/name' (averaged 18 columns)
-✓ Saved prototype for 'MusicArtistAT' (averaged 16 columns)
-✓ Saved prototype for 'MusicRecording/name' (averaged 13 columns)
-✓ Saved prototype for 'Number' (averaged 15 columns)
-✓ Saved prototype for 'OccupationalExperienceRequirements' (averaged 13 columns)
-✓ Saved prototype for 'OfferItemCondition' (averaged 10 columns)
-✓ Saved prototype for 'Organization' (averaged 19 columns)
-✓ Saved prototype for 'Person/name' (averaged 25 columns)
-✓ Saved prototype for 'Photograph' (averaged 17 columns)
-✓ Saved prototype for 'Place/name' (averaged 16 columns)
-✓ Saved prototype for 'PostalAddress' (averaged 12 columns)
-✓ Saved prototype for 'Product/description' (averaged 25 columns)
-✓ Saved prototype for 'Product/name' (averaged 33 columns)
-✓ Saved prototype for 'ProductModel' (averaged 10 columns)
-✓ Saved prototype for 'QuantitativeValue' (averaged 12 columns)
+✓ Saved prototype for 'LocalBusiness/name' (averaged 17 columns)
+✓ Saved prototype for 'Movie/name' (averaged 15 columns)
+✓ Saved prototype for 'MusicAlbum/name' (averaged 10 columns)
+✓ Saved prototype for 'MusicArtistAT' (averaged 11 columns)
+✓ Saved prototype for 'MusicRecording/name' (averaged 10 columns)
+✓ Saved prototype for 'Number' (averaged 13 columns)
+✓ Saved prototype for 'OfferItemCondition' (averaged 11 columns)
+✓ Saved prototype for 'Person/name' (averaged 27 columns)
+✓ Saved prototype for 'Photograph' (averaged 10 columns)
+✓ Saved prototype for 'Place/name' (averaged 14 columns)
+✓ Saved prototype for 'Product/name' (averaged 16 columns)
 ✓ Saved prototype for 'Rating' (averaged 10 columns)
-✓ Saved prototype for 'Recipe/description' (averaged 13 columns)
-✓ Saved prototype for 'Recipe/name' (averaged 11 columns)
-✓ Saved prototype for 'Restaurant/name' (averaged 18 columns)
-✓ Saved prototype for 'RestrictedDiet' (averaged 10 columns)
-✓ Saved prototype for 'Review' (averaged 10 columns)
-✓ Saved prototype for 'SportsEvent/name' (averaged 10 columns)
-✓ Saved prototype for 'SportsTeam' (averaged 12 columns)
-✓ Saved prototype for 'TVEpisode/name' (averaged 12 columns)
-✓ Saved prototype for 'Time' (averaged 21 columns)
-✓ Saved prototype for 'URL' (averaged 15 columns)
-✓ Saved prototype for 'addressLocality' (averaged 27 columns)
-✓ Saved prototype for 'addressRegion' (averaged 19 columns)
-✓ Saved prototype for 'category' (averaged 10 columns)
-✓ Saved prototype for 'currency' (averaged 27 columns)
-✓ Saved prototype for 'email' (averaged 11 columns)
+✓ Saved prototype for 'Review' (averaged 11 columns)
+✓ Saved prototype for 'URL' (averaged 10 columns)
+✓ Saved prototype for 'addressLocality' (averaged 18 columns)
+✓ Saved prototype for 'addressRegion' (averaged 12 columns)
+✓ Saved prototype for 'category' (averaged 18 columns)
+✓ Saved prototype for 'currency' (averaged 22 columns)
+✓ Saved prototype for 'email' (averaged 19 columns)
+✓ Saved prototype for 'faxNumber' (averaged 10 columns)
 ✓ Saved prototype for 'openingHours' (averaged 10 columns)
-✓ Saved prototype for 'paymentAccepted' (averaged 10 columns)
-✓ Saved prototype for 'postalCode' (averaged 22 columns)
-✓ Saved prototype for 'price' (averaged 21 columns)
-✓ Saved prototype for 'priceRange' (averaged 21 columns)
-✓ Saved prototype for 'streetAddress' (averaged 18 columns)
-✓ Saved prototype for 'telephone' (averaged 18 columns)
-✓ Saved prototype for 'unitCode' (averaged 12 columns)
-✓ Saved prototype for 'unitText' (averaged 5 columns)
-✓ Saved prototype for 'weight' (averaged 12 columns)
-train /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R2/gt/sotab_cta_train_round2.csv
-Traceback (most recent call last):
-  File "/home/kpanag/vscode/cta_full_pipeline/cta_full_pipeline.py", line 211, in <module>
-    main()
-  File "/home/kpanag/vscode/cta_full_pipeline/cta_full_pipeline.py", line 121, in main
-    prot_dict, cell_header_dict, dom_dict, model, topk_results = check_files_exist(config)
-                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/cta_full_pipeline/cta_full_pipeline.py", line 80, in check_files_exist
-    train_catboost.main()
-  File "/home/kpanag/vscode/cta_full_pipeline/catboost/train_catboost.py", line 112, in main
-    data_preprocess.process_data()
-  File "/home/kpanag/vscode/cta_full_pipeline/catboost/data_preprocess.py", line 51, in process_data
-    embedding, col_data = embedder.get_embedding(df, gt_row)
-                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/cta_full_pipeline/embedder.py", line 30, in get_embedding
-    response = ollama.embed(
-               ^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/ollama/_client.py", line 415, in embed
-    return self._request(
-           ^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/ollama/_client.py", line 199, in _request
-    return cls(**self._request_raw(*args, **kwargs).json())
-                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/ollama/_client.py", line 139, in _request_raw
-    r = self._client.request(*args, **kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 825, in request
-    return self.send(request, auth=auth, follow_redirects=follow_redirects)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 914, in send
-    response = self._send_handling_auth(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 942, in _send_handling_auth
-    response = self._send_handling_redirects(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 979, in _send_handling_redirects
-    response = self._send_single_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_client.py", line 1014, in _send_single_request
-    response = transport.handle_request(request)
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpx/_transports/default.py", line 250, in handle_request
-    resp = self._pool.handle_request(req)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 256, in handle_request
-    raise exc from None
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/connection_pool.py", line 236, in handle_request
-    response = connection.handle_request(
-               ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/connection.py", line 103, in handle_request
-    return self._connection.handle_request(request)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 136, in handle_request
-    raise exc
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 106, in handle_request
-    ) = self._receive_response_headers(**kwargs)
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 177, in _receive_response_headers
-    event = self._receive_event(timeout=timeout)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_sync/http11.py", line 217, in _receive_event
-    data = self._network_stream.read(
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/kpanag/vscode/semtabCTAHybrid/venv/lib/python3.12/site-packages/httpcore/_backends/sync.py", line 128, in read
-    return self._sock.recv(max_bytes)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-KeyboardInterrupt
+✓ Saved prototype for 'postalCode' (averaged 15 columns)
+✓ Saved prototype for 'price' (averaged 27 columns)
+✓ Saved prototype for 'priceRange' (averaged 11 columns)
+✓ Saved prototype for 'streetAddress' (averaged 13 columns)
+✓ Saved prototype for 'telephone' (averaged 32 columns)
+Total execution time for prototype embeddings: 161.35 seconds
+Total execution time for cell index: 111.67 seconds
+train /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/sotab_cta_train_round1.csv
+Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/supplementary_files/train_snowflake-arctic-embed2:568m_AVG:True.csv
+val /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/sotab_cta_validation_round1.csv
+Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/supplementary_files/val_snowflake-arctic-embed2:568m_AVG:True.csv
+test /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/sotab_cta_test_round1.csv
+Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/supplementary_files/test_snowflake-arctic-embed2:568m_AVG:True.csv
+Total execution time for data pre_processing: 14160.40 seconds
+(55360, 1024) (597, 1024) (590, 1024)
+Num classes: 40
+0:	learn: 0.2146790	test: 0.1691792	best: 0.1691792 (0)	total: 134ms	remaining: 1m 6s
+50:	learn: 0.8627610	test: 0.8241206	best: 0.8257956 (48)	total: 7.88s	remaining: 1m 9s
+100:	learn: 0.8894520	test: 0.8442211	best: 0.8442211 (99)	total: 13.9s	remaining: 55.1s
+150:	learn: 0.9017211	test: 0.8509213	best: 0.8509213 (150)	total: 19s	remaining: 43.8s
+200:	learn: 0.9138142	test: 0.8576214	best: 0.8576214 (188)	total: 25.5s	remaining: 38s
+250:	learn: 0.9235370	test: 0.8626466	best: 0.8626466 (219)	total: 33s	remaining: 32.7s
+300:	learn: 0.9297783	test: 0.8676717	best: 0.8710218 (298)	total: 40.3s	remaining: 26.6s
+350:	learn: 0.9358385	test: 0.8726968	best: 0.8726968 (349)	total: 47.4s	remaining: 20.1s
+400:	learn: 0.9404378	test: 0.8760469	best: 0.8777219 (392)	total: 54.6s	remaining: 13.5s
+450:	learn: 0.9441008	test: 0.8760469	best: 0.8793970 (421)	total: 1m 1s	remaining: 6.68s
+499:	learn: 0.9482662	test: 0.8793970	best: 0.8810720 (457)	total: 1m 8s	remaining: 0us
+bestTest = 0.8810720268
+bestIteration = 457
+Shrink model to first 458 iterations.
+Best round: 457
+0:	learn: 0.2177206	total: 108ms	remaining: 49.3s
+50:	learn: 0.8636357	total: 7.87s	remaining: 1m 2s
+100:	learn: 0.8911608	total: 14.6s	remaining: 51.4s
+150:	learn: 0.9022454	total: 19.8s	remaining: 40.1s
+200:	learn: 0.9133385	total: 26.4s	remaining: 33.6s
+250:	learn: 0.9218503	total: 33.6s	remaining: 27.6s
+300:	learn: 0.9285818	total: 40.9s	remaining: 21.2s
+350:	learn: 0.9342433	total: 48.1s	remaining: 14.5s
+400:	learn: 0.9392873	total: 55.2s	remaining: 7.7s
+450:	learn: 0.9436206	total: 1m 2s	remaining: 825ms
+456:	learn: 0.9439817	total: 1m 2s	remaining: 0us
+
+=== CatBoost Only ===
+Accuracy:         0.8729
+Micro F1:         0.8729
+Macro F1:         0.8601
+Micro Precision:  0.8729
+Macro Precision:  0.8799
+Micro Recall:     0.8729
+Macro Recall:     0.8668
+Total execution time for catboost training: 203.08 seconds
+/home/kpanag/vscode/cta_full_pipeline/catboost/model/CatBoost_ROUND1_snowflake-arctic-embed2:568m_AVG-True.cbm
+Processed 100/590 rows
+Processed 200/590 rows
+Processed 300/590 rows
+Processed 400/590 rows
+Processed 500/590 rows
++++ 0
+Evaluation Results: {'macro_f1': 0.8542219689861866, 'micro_f1': 0.8694915254237288, 'precision': 0.8901091817539186, 'recall': 0.8571354657927884}
+Total execution time: 14806.66 seconds

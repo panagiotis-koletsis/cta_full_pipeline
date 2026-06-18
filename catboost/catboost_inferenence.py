@@ -1,5 +1,6 @@
 import pickle
 from pyexpat import model
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -7,12 +8,29 @@ from catboost import CatBoostClassifier
 
 class CatBoostInference:
 
-    def __init__(self):
+    def __init__(self,config):
         self.model = CatBoostClassifier() 
-        self.model.load_model("catboost/model/CatBoost_ROUND2_nomic-embed-text-v2-moe:latest_AVG-False.cbm")
 
-        with open("catboost/model/CatBoost_ROUND2_nomic-embed-text-v2-moe:latest_AVG-False_label_encoder.pkl", "rb") as f:
+        ROUND = config["ROUND"]
+        EMBEDDING_MODEL = config["EMBEDDING_MODEL"]
+        AVG = config["AVG"]
+        
+        # Model path is relative to the workspace root (catboost/model/)
+        model_dir = Path(__file__).parent / "model"
+        
+        model_path = model_dir / f"CatBoost_ROUND{ROUND}_{EMBEDDING_MODEL}_AVG-{AVG}.cbm"
+        print(model_path)
+        label_encoder_path = model_dir / f"CatBoost_ROUND{ROUND}_{EMBEDDING_MODEL}_AVG-{AVG}_label_encoder.pkl"
+
+        self.model.load_model(str(model_path))
+        
+        with open(label_encoder_path, "rb") as f:
             self.le = pickle.load(f)
+
+        # self.model.load_model("catboost/model/CatBoost_ROUND2_nomic-embed-text-v2-moe:latest_AVG-False.cbm")
+
+        # with open("catboost/model/CatBoost_ROUND2_nomic-embed-text-v2-moe:latest_AVG-False_label_encoder.pkl", "rb") as f:
+        #     self.le = pickle.load(f)
 
     def run_catboost_inference(self, embedding, table_name, col_num, top_k_string):
         X = np.array(embedding, dtype=np.float32).reshape(1, -1) 

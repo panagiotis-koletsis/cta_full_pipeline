@@ -15,12 +15,12 @@ def get_config():
         "K" : 5,
         "HAS_THRESHOLD" : False, # whether to apply a cosine similarity threshold for accepting predictions, or just take the best match regardless of score
         "THRESHOLD" : 0.95,
-        "AVG" : False, # whether to average row embeddings for column representation (True) or concatenate them (False)
+        "AVG" : True, # whether to average row embeddings for column representation (True) or concatenate them (False)
         "DOM_RES" : True, # Extract and use domain restrictions
-        "ROUND" : 2,
+        "ROUND" : 1,
         "BASE_PATH" : Path("/home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023"),
-        "EMBEDDING_MODEL" : "nomic-embed-text-v2-moe:latest",
-        #"EMBEDDING_MODEL" : "snowflake-arctic-embed2:568m",
+        #"EMBEDDING_MODEL" : "nomic-embed-text-v2-moe:latest",
+        "EMBEDDING_MODEL" : "snowflake-arctic-embed2:568m",
         "PREPROCESS_EMB_FILES_EXISTS" : False, #avoid re running the data preprocessing for extracting the emb.   TRUE or FALSE
         "MODEL_EXISTS" : False, #avoid re running the catboost training. TRUE or FALSE
         "PROTPYPES_EMB_EXISTS" : False, #whether the prototype embeddings file already exists. TRUE or FALSE
@@ -193,3 +193,8 @@ def cell_index_matching(cell_header_dict, col_data, tab_dom, dom_dict):
                         attr = "nope"
 
     return attr
+
+def has_duplicates(col_data):
+    values = col_data.dropna()
+    has_dups = values.duplicated().any()
+    return int(has_dups)

@@ -6,10 +6,11 @@ import time
 import pandas as pd
 
 
-from functions import get_config, get_prot_avg_cols, get_domains, run_top_k_exp, cell_index_matching
+from functions import get_config, get_prot_avg_cols, get_domains, run_top_k_exp, cell_index_matching, has_duplicates
 from embedder import Embedder
 from functions_for_cell_index_macthing import header_cell_dict
 from evaluator import SOTAB_Evaluator, SOTAB_Evaluator_TopK
+
 
 import sys
 from pathlib import Path
@@ -44,6 +45,7 @@ def initialize(config):
     return TOPK, K, HAS_THRESHOLD, THRESHOLD, AVG, DOM_RES, ROUND, BASE_PATH, EMBEDDING_MODEL, GT_URL_TRAIN, GT_URL_VAL, GT_URL_TEST, TABLES_URL, PREPROCESS_EMB_FILES_EXISTS, MODEL_EXISTS, PROTPYPES_EMB_EXISTS, CELL_DICT_EXISTS, COS_SIM_THRESHOLD, TOP_K_EXISTS
 
 def check_files_exist(config):
+    print("Starting Initalization...")
     ROUND = config["ROUND"]
     BASE_PATH = config["BASE_PATH"]
     GT_URL_TRAIN = BASE_PATH / f"CTA-SCH-R{ROUND}/gt/sotab_cta_train_round{ROUND}.csv"
@@ -85,7 +87,7 @@ def check_files_exist(config):
             topk_results = json.load(f)
 
     #load the trained model
-    model = CatBoostInference()
+    model = CatBoostInference(config)
 
     return prot_dict, cell_header_dict, dom_dict, model, topk_results
 
@@ -160,6 +162,9 @@ def main():
             best_attr1 = attr
 
         if best_attr1 == "nope" and embedding is not None:
+            # has_dups = has_duplicates(col_data)
+            # embedding = embedding + [has_dups]
+
             best_attr1 = best_attr
             pred_label = model.run_catboost_inference(embedding, tab_name, col_num, topk_string)
             best_attr1 = pred_label

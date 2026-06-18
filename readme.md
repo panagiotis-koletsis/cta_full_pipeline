@@ -1,0 +1,1 @@
+python -u cta_full_pipeline.py 2>&1 | tee pipeline.log
