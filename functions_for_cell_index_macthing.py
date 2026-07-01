@@ -24,7 +24,7 @@ def cell_index_matching(cell_header_dict, col_data, tab_dom, dom_dict):
             else: 
                 sum_counts = sum(entry.values())
                 max_count = max(entry.values())
-                if max_count/sum_counts > 0.9:
+                if max_count/sum_counts > 0.90:
                     max_header = max(entry, key=entry.get)
                     if max_header in dom_dict[tab_dom] and max_count > 5:
                         attr = max_header

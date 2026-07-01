@@ -44,43 +44,123 @@ def evaluate_model(y_test, y_pred, le):
     print(f"Macro Precision:  {precision_macro:.4f}")
     print(f"Micro Recall:     {recall_micro:.4f}")
     print(f"Macro Recall:     {recall_macro:.4f}")
-    #print("\nClassification Report:")
-    #print(classification_report(y_test, y_pred, target_names=le.classes_, output_dict=False, zero_division=0))
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred, target_names=le.classes_, output_dict=False, zero_division=0))
 
 
-# def apply_cosine_reranking(proba, cosine_df, test_df, le):
-#     merged = test_df[["table", "col"]].copy().reset_index(drop=True)
-#     cosine_df = cosine_df.rename(columns={"header": "cosine_header"})
-#     merged = merged.merge(cosine_df[["table", "col", "cosine_header"]], on=["table", "col"], how="left")
 
-#     reranked_preds = []
-#     fallback_count = 0
+def combine_emb(BASE_PATH, ROUND, train_df, val_df, test_df):
+    emb_mod = "snowflake-arctic-embed2:568m"
+    avg = True
 
-#     for i, row in merged.iterrows():
-#         cosine_raw = row["cosine_header"]
+    # Load embeddings from the second model
+    train_path_aux = build_split_path(BASE_PATH, ROUND, "train", emb_mod, avg)
+    val_path_aux   = build_split_path(BASE_PATH, ROUND, "val", emb_mod, avg)
+    test_path_aux  = build_split_path(BASE_PATH, ROUND, "test", emb_mod, avg)
 
-#         if pd.isna(cosine_raw):
-#             reranked_preds.append(np.argmax(proba[i]))
-#             fallback_count += 1
-#             continue
+    train_df_aux = pd.read_csv(train_path_aux)
+    val_df_aux   = pd.read_csv(val_path_aux)
+    test_df_aux  = pd.read_csv(test_path_aux)
 
-#         candidates = cosine_raw.split("+")
-#         candidate_indices = []
-#         for c in candidates:
-#             if c in le.classes_:
-#                 candidate_indices.append(le.transform([c])[0])
+    # Function to combine two embedding columns
+    def combine_embeddings(df_main, df_aux):
+        key_cols = ["table", "col", "header"]
 
-#         if not candidate_indices:
-#             reranked_preds.append(np.argmax(proba[i]))
-#             fallback_count += 1
-#             continue
+        # Keep only rows that exist in both DataFrames
+        common_keys = pd.merge(
+            df_main[key_cols].drop_duplicates(),
+            df_aux[key_cols].drop_duplicates(),
+            on=key_cols,
+            how="inner"
+        )
 
-#         masked_proba = np.zeros_like(proba[i])
-#         masked_proba[candidate_indices] = proba[i][candidate_indices]
-#         reranked_preds.append(np.argmax(masked_proba))
+        # Filter and align the DataFrames
+        df_main = (
+            df_main.merge(common_keys, on=key_cols, how="inner")
+                   .sort_values(key_cols)
+                   .reset_index(drop=True)
+        )
 
-#     print(f"Fallback to CatBoost (no cosine match): {fallback_count}/{len(merged)}")
-#     return np.array(reranked_preds)
+        df_aux = (
+            df_aux.merge(common_keys, on=key_cols, how="inner")
+                  .sort_values(key_cols)
+                  .reset_index(drop=True)
+        )
+
+        # Parse embeddings
+        df_main["emb_main"] = df_main["embedding"].apply(parse_embedding)
+        df_aux["emb_aux"] = df_aux["embedding"].apply(parse_embedding)
+
+        # Concatenate embeddings
+        combined = []
+        for e1, e2 in zip(df_main["emb_main"], df_aux["emb_aux"]):
+            if e1 is not None and e2 is not None:
+                combined.append(np.concatenate([e1, e2]))
+            else:
+                combined.append(None)
+
+        df_main["combined_embedding"] = combined
+        df_main = df_main.drop(columns=["emb_main"])
+
+        return df_main
+
+    # Combine embeddings for all three splits
+    train_df = combine_embeddings(train_df, train_df_aux)
+    val_df   = combine_embeddings(val_df, val_df_aux)
+    test_df  = combine_embeddings(test_df, test_df_aux)
+
+
+    return train_df, val_df, test_df
+# def combine_emb(BASE_PATH, ROUND, train_df, val_df, test_df):
+#     emb_mod = "snowflake-arctic-embed2:568m"
+#     avg = True
+    
+#     # Load embeddings from the second model
+#     train_path_aux = build_split_path(BASE_PATH, ROUND, "train", emb_mod, avg)
+#     val_path_aux   = build_split_path(BASE_PATH, ROUND, "val",   emb_mod, avg)
+#     test_path_aux  = build_split_path(BASE_PATH, ROUND, "test",  emb_mod, avg)
+
+#     train_df_aux = pd.read_csv(train_path_aux)
+#     val_df_aux   = pd.read_csv(val_path_aux)
+#     test_df_aux  = pd.read_csv(test_path_aux)
+    
+#     # Function to combine two embedding columns
+#     def combine_embeddings(df_main, df_aux):
+#         df_main["emb_main"] = df_main["embedding"].apply(parse_embedding)
+#         df_aux["emb_aux"] = df_aux["embedding"].apply(parse_embedding)
+        
+#         # Concatenate embeddings
+#         combined = []
+#         for e1, e2 in zip(df_main["emb_main"], df_aux["emb_aux"]):
+#             if e1 is not None and e2 is not None:
+#                 combined.append(np.concatenate([e1, e2]))
+#             else:
+#                 combined.append(None)
+        
+#         df_main["combined_embedding"] = combined
+#         df_main = df_main.drop(columns=["emb_main"])
+#         return df_main
+    
+#     # Combine embeddings for all three splits
+#     train_df = combine_embeddings(train_df, train_df_aux)
+#     val_df = combine_embeddings(val_df, val_df_aux)
+#     test_df = combine_embeddings(test_df, test_df_aux)
+    
+#     return train_df, val_df, test_df
+
+# def combine_emb(BASE_PATH, ROUND, train_df, val_df, test_df):
+#     emb_mod = "snowflake-arctic-embed2:568m"
+#     avg = True
+#     train_path = build_split_path(BASE_PATH, ROUND, "train", emb_mod, avg)
+#     val_path   = build_split_path(BASE_PATH, ROUND, "val",   emb_mod, avg)
+#     test_path  = build_split_path(BASE_PATH, ROUND, "test",  emb_mod, avg)
+
+#     train_df1 = pd.read_csv(train_path)
+#     val_df1   = pd.read_csv(val_path)
+#     test_df1  = pd.read_csv(test_path)
+#     print(train_df1.head(5))
+#     print(train_df.head(5))
+
 
 def initialize():
     config = get_config()
@@ -124,8 +204,23 @@ def main():
     val_df   = pd.read_csv(val_path)
     test_df  = pd.read_csv(test_path)
 
+    # train_df, val_df, test_df = combine_emb(BASE_PATH, ROUND, train_df, val_df, test_df)
+    # # Drop rows with None combined embeddings
+    # train_df = train_df.dropna(subset=["combined_embedding"])
+    # val_df   = val_df.dropna(subset=["combined_embedding"])
+    # test_df  = test_df.dropna(subset=["combined_embedding"])
+
+    # print(train_df.shape, val_df.shape, test_df.shape)
+
+    # # Use combined_embedding directly (already parsed numpy arrays)
+    # X_train = np.vstack(train_df["combined_embedding"].values)
+    # X_val   = np.vstack(val_df["combined_embedding"].values)
+    # X_test  = np.vstack(test_df["combined_embedding"].values)
+
+
     #cosine_df = pd.read_csv("topk.csv")
 
+    # #this is for test of concating emb comment out
     for df in [train_df, val_df, test_df]:
         df["parsed_embedding"] = df["embedding"].apply(parse_embedding)
 

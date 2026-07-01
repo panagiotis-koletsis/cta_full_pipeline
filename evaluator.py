@@ -122,7 +122,7 @@ class SOTAB_Evaluator:
          to provide meaningful feedback to your users
         """
 
-        #self._evaluate_per_class(gt_labels, predictions, cta_labels)
+        self._evaluate_per_class(gt_labels, predictions, cta_labels)
 
         return results
    

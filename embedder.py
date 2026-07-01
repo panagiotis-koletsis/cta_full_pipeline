@@ -12,6 +12,7 @@ class Embedder:
         self.EMBEDDING_MODEL = config["EMBEDDING_MODEL"]
         self.AVG = config["AVG"]
         self.TABLES_URL = config["BASE_PATH"] / f"CTA-SCH-R{config['ROUND']}/Round{config['ROUND']}-SOTAB-CTA-SCH-Tables"
+        self.BOTH_EMBS = config["BOTH_EMBS"]
 
 
     def truncate_to_tokens(self, text, max_tokens=7500, model="gpt-4o-mini"):
@@ -43,6 +44,8 @@ class Embedder:
                 embedding = [0] * 1024
             
             #embedding = None
+
+
         return embedding, col_data
     
 

@@ -6,7 +6,7 @@ import time
 import pandas as pd
 
 
-from functions import get_config, get_prot_avg_cols, get_domains, run_top_k_exp, cell_index_matching, has_duplicates
+from functions import get_config, get_prot_avg_cols, get_domains, run_top_k_exp, cell_index_matching, has_duplicates, both_embs
 from embedder import Embedder
 from functions_for_cell_index_macthing import header_cell_dict
 from evaluator import SOTAB_Evaluator, SOTAB_Evaluator_TopK
@@ -39,10 +39,11 @@ def initialize(config):
     CELL_DICT_EXISTS = config["CELL_DICT_EXISTS"]
     COS_SIM_THRESHOLD = config["COS_SIM_TRHRESHOLD"]
     TOP_K_EXISTS = config["TOP_K_EXISTS"]
+    BOTH_EMBS = config["BOTH_EMBS"]
 
 
 
-    return TOPK, K, HAS_THRESHOLD, THRESHOLD, AVG, DOM_RES, ROUND, BASE_PATH, EMBEDDING_MODEL, GT_URL_TRAIN, GT_URL_VAL, GT_URL_TEST, TABLES_URL, PREPROCESS_EMB_FILES_EXISTS, MODEL_EXISTS, PROTPYPES_EMB_EXISTS, CELL_DICT_EXISTS, COS_SIM_THRESHOLD, TOP_K_EXISTS
+    return TOPK, K, HAS_THRESHOLD, THRESHOLD, AVG, DOM_RES, ROUND, BASE_PATH, EMBEDDING_MODEL, GT_URL_TRAIN, GT_URL_VAL, GT_URL_TEST, TABLES_URL, PREPROCESS_EMB_FILES_EXISTS, MODEL_EXISTS, PROTPYPES_EMB_EXISTS, CELL_DICT_EXISTS, COS_SIM_THRESHOLD, TOP_K_EXISTS, BOTH_EMBS
 
 def check_files_exist(config):
     print("Starting Initalization...")
@@ -117,7 +118,7 @@ def main():
     start_time = time.time()
 
     config = get_config()
-    TOPK, K, HAS_THRESHOLD, THRESHOLD, AVG, DOM_RES, ROUND, BASE_PATH, EMBEDDING_MODEL, GT_URL_TRAIN, GT_URL_VAL, GT_URL_TEST, TABLES_URL, PREPROCESS_EMB_FILES_EXISTS, MODEL_EXISTS, PROTPYPES_EMB_EXISTS, CELL_DICT_EXISTS, COS_SIM_THRESHOLD, TOP_K_EXISTS = initialize(config)
+    TOPK, K, HAS_THRESHOLD, THRESHOLD, AVG, DOM_RES, ROUND, BASE_PATH, EMBEDDING_MODEL, GT_URL_TRAIN, GT_URL_VAL, GT_URL_TEST, TABLES_URL, PREPROCESS_EMB_FILES_EXISTS, MODEL_EXISTS, PROTPYPES_EMB_EXISTS, CELL_DICT_EXISTS, COS_SIM_THRESHOLD, TOP_K_EXISTS, BOTH_EMBS = initialize(config)
 
 
     prot_dict, cell_header_dict, dom_dict, model, topk_results = check_files_exist(config)
@@ -164,6 +165,8 @@ def main():
         if best_attr1 == "nope" and embedding is not None:
             # has_dups = has_duplicates(col_data)
             # embedding = embedding + [has_dups]
+            if BOTH_EMBS:
+                embedding = both_embs(EMBEDDING_MODEL, AVG, gt_row, col_data, embedding)
 
             best_attr1 = best_attr
             pred_label = model.run_catboost_inference(embedding, tab_name, col_num, topk_string)

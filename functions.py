@@ -8,25 +8,26 @@ import time
 from embedder import Embedder
 
 
-
+ # R3 is Dbpedia R2 CTA
 def get_config():
     config = {
         "TOPK" : False, # whether to use Top-K evaluation or standard single-label evaluation
-        "K" : 5,
+        "K" : 7, #this variable is used for the topk selection either way
         "HAS_THRESHOLD" : False, # whether to apply a cosine similarity threshold for accepting predictions, or just take the best match regardless of score
         "THRESHOLD" : 0.95,
         "AVG" : True, # whether to average row embeddings for column representation (True) or concatenate them (False)
         "DOM_RES" : True, # Extract and use domain restrictions
-        "ROUND" : 1,
+        "ROUND" : 2,
         "BASE_PATH" : Path("/home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023"),
         #"EMBEDDING_MODEL" : "nomic-embed-text-v2-moe:latest",
         "EMBEDDING_MODEL" : "snowflake-arctic-embed2:568m",
-        "PREPROCESS_EMB_FILES_EXISTS" : False, #avoid re running the data preprocessing for extracting the emb.   TRUE or FALSE
-        "MODEL_EXISTS" : False, #avoid re running the catboost training. TRUE or FALSE
-        "PROTPYPES_EMB_EXISTS" : False, #whether the prototype embeddings file already exists. TRUE or FALSE
-        "CELL_DICT_EXISTS" : False, #whether the cell-header dict file already exists. TRUE or FALSE
+        "PREPROCESS_EMB_FILES_EXISTS" : True, #avoid re running the data preprocessing for extracting the emb.   TRUE or FALSE
+        "MODEL_EXISTS" : True, #avoid re running the catboost training. TRUE or FALSE
+        "PROTPYPES_EMB_EXISTS" : True, #whether the prototype embeddings file already exists. TRUE or FALSE
+        "CELL_DICT_EXISTS" : True, #whether the cell-header dict file already exists. TRUE or FALSE
         "TOP_K_EXISTS" : False, #whether the top-k results file already exists. TRUE or FALSE
-        "COS_SIM_TRHRESHOLD" : 0.90,
+        "COS_SIM_TRHRESHOLD" : 0.92,
+        "BOTH_EMBS": False
         #"Train_with_functional_property" : True #whether to train the catboost model with functional property as a feature. TRUE or FALSE
     }
     return config
@@ -127,6 +128,7 @@ def get_domains(GT_PATH1,GT_PATH2):
     #print(dict)
     return dict
 
+
     #write_to_file()
         
 
@@ -185,7 +187,7 @@ def cell_index_matching(cell_header_dict, col_data, tab_dom, dom_dict):
             else: 
                 sum_counts = sum(entry.values())
                 max_count = max(entry.values())
-                if max_count/sum_counts > 0.9:
+                if max_count/sum_counts > 0.92:
                     max_header = max(entry, key=entry.get)
                     if max_header in dom_dict[tab_dom] and max_count > 5:
                         attr = max_header
@@ -198,3 +200,44 @@ def has_duplicates(col_data):
     values = col_data.dropna()
     has_dups = values.duplicated().any()
     return int(has_dups)
+
+
+import ollama
+import numpy as np
+def both_embs(EMBEDDING_MODEL, AVG, gt_row, col_data,embedding):
+
+    column_text = col_data.dropna().astype(str).tolist()
+    column_text = column_text * 2
+
+
+
+    if EMBEDDING_MODEL == "nomic-embed-text-v2-moe:latest":
+        try:
+            response2 = ollama.embed(
+            model="snowflake-arctic-embed2:568m",
+            input=column_text
+            )
+            
+            embeddings2 = response2["embeddings"]
+            embedding2 = np.mean(embeddings2, axis=0).tolist()
+        except Exception as e:
+            print(f"⚠️ Embedding failed for column : {e} and gt_row {gt_row}")
+            embedding2 = [0] * 768
+            if EMBEDDING_MODEL == "snowflake-arctic-embed2:568m":
+                embedding2 = [0] * 1024
+    else:
+        try:
+            response2 = ollama.embed(
+            model="nomic-embed-text-v2-moe:latest",
+            input=column_text
+            )
+
+            embedding2 = response2['embeddings'][0]
+
+        except Exception as e:
+            print(f"⚠️ Embedding failed for column: {e} and gt_row {gt_row}")
+            embedding2 = [0] * 768
+            if EMBEDDING_MODEL == "snowflake-arctic-embed2:568m":
+                embedding2 = [0] * 1024
+    embedding = embedding + embedding2
+    return embedding

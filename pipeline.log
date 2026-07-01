@@ -1,98 +1,208 @@
 Starting Initalization...
 Computing prototype embeddings for each column...
-597
-✓ Saved prototype for 'Book/name' (averaged 27 columns)
-✓ Saved prototype for 'BookFormatType' (averaged 15 columns)
-✓ Saved prototype for 'Country' (averaged 21 columns)
-✓ Saved prototype for 'Date' (averaged 15 columns)
-✓ Saved prototype for 'DeliveryMethod' (averaged 11 columns)
-✓ Saved prototype for 'Duration' (averaged 12 columns)
-✓ Saved prototype for 'Event/name' (averaged 13 columns)
-✓ Saved prototype for 'EventAttendanceModeEnumeration' (averaged 10 columns)
-✓ Saved prototype for 'EventStatusType' (averaged 11 columns)
-✓ Saved prototype for 'GenderType' (averaged 10 columns)
-✓ Saved prototype for 'IdentifierAT' (averaged 10 columns)
-✓ Saved prototype for 'ItemAvailability' (averaged 28 columns)
+731
+✓ Saved prototype for 'Album' (averaged 18 columns)
+✓ Saved prototype for 'Book' (averaged 18 columns)
+✓ Saved prototype for 'Category' (averaged 10 columns)
+✓ Saved prototype for 'Company' (averaged 14 columns)
+✓ Saved prototype for 'Country' (averaged 26 columns)
+✓ Saved prototype for 'Currency' (averaged 27 columns)
+✓ Saved prototype for 'Event' (averaged 13 columns)
+✓ Saved prototype for 'Film' (averaged 14 columns)
+✓ Saved prototype for 'Hotel' (averaged 18 columns)
+✓ Saved prototype for 'Identifier' (averaged 11 columns)
+✓ Saved prototype for 'Image' (averaged 17 columns)
 ✓ Saved prototype for 'Language' (averaged 10 columns)
-✓ Saved prototype for 'LocalBusiness/name' (averaged 17 columns)
-✓ Saved prototype for 'Movie/name' (averaged 15 columns)
-✓ Saved prototype for 'MusicAlbum/name' (averaged 10 columns)
-✓ Saved prototype for 'MusicArtistAT' (averaged 11 columns)
-✓ Saved prototype for 'MusicRecording/name' (averaged 10 columns)
-✓ Saved prototype for 'Number' (averaged 13 columns)
-✓ Saved prototype for 'OfferItemCondition' (averaged 11 columns)
-✓ Saved prototype for 'Person/name' (averaged 27 columns)
-✓ Saved prototype for 'Photograph' (averaged 10 columns)
-✓ Saved prototype for 'Place/name' (averaged 14 columns)
-✓ Saved prototype for 'Product/name' (averaged 16 columns)
-✓ Saved prototype for 'Rating' (averaged 10 columns)
-✓ Saved prototype for 'Review' (averaged 11 columns)
-✓ Saved prototype for 'URL' (averaged 10 columns)
-✓ Saved prototype for 'addressLocality' (averaged 18 columns)
-✓ Saved prototype for 'addressRegion' (averaged 12 columns)
-✓ Saved prototype for 'category' (averaged 18 columns)
-✓ Saved prototype for 'currency' (averaged 22 columns)
-✓ Saved prototype for 'email' (averaged 19 columns)
-✓ Saved prototype for 'faxNumber' (averaged 10 columns)
-✓ Saved prototype for 'openingHours' (averaged 10 columns)
-✓ Saved prototype for 'postalCode' (averaged 15 columns)
-✓ Saved prototype for 'price' (averaged 27 columns)
-✓ Saved prototype for 'priceRange' (averaged 11 columns)
-✓ Saved prototype for 'streetAddress' (averaged 13 columns)
-✓ Saved prototype for 'telephone' (averaged 32 columns)
-Total execution time for prototype embeddings: 161.35 seconds
-Total execution time for cell index: 111.67 seconds
-train /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/sotab_cta_train_round1.csv
-Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/supplementary_files/train_snowflake-arctic-embed2:568m_AVG:True.csv
-val /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/sotab_cta_validation_round1.csv
-Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/supplementary_files/val_snowflake-arctic-embed2:568m_AVG:True.csv
-test /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/sotab_cta_test_round1.csv
-Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R1/gt/supplementary_files/test_snowflake-arctic-embed2:568m_AVG:True.csv
-Total execution time for data pre_processing: 14160.40 seconds
-(55360, 1024) (597, 1024) (590, 1024)
-Num classes: 40
-0:	learn: 0.2146790	test: 0.1691792	best: 0.1691792 (0)	total: 134ms	remaining: 1m 6s
-50:	learn: 0.8627610	test: 0.8241206	best: 0.8257956 (48)	total: 7.88s	remaining: 1m 9s
-100:	learn: 0.8894520	test: 0.8442211	best: 0.8442211 (99)	total: 13.9s	remaining: 55.1s
-150:	learn: 0.9017211	test: 0.8509213	best: 0.8509213 (150)	total: 19s	remaining: 43.8s
-200:	learn: 0.9138142	test: 0.8576214	best: 0.8576214 (188)	total: 25.5s	remaining: 38s
-250:	learn: 0.9235370	test: 0.8626466	best: 0.8626466 (219)	total: 33s	remaining: 32.7s
-300:	learn: 0.9297783	test: 0.8676717	best: 0.8710218 (298)	total: 40.3s	remaining: 26.6s
-350:	learn: 0.9358385	test: 0.8726968	best: 0.8726968 (349)	total: 47.4s	remaining: 20.1s
-400:	learn: 0.9404378	test: 0.8760469	best: 0.8777219 (392)	total: 54.6s	remaining: 13.5s
-450:	learn: 0.9441008	test: 0.8760469	best: 0.8793970 (421)	total: 1m 1s	remaining: 6.68s
-499:	learn: 0.9482662	test: 0.8793970	best: 0.8810720 (457)	total: 1m 8s	remaining: 0us
-bestTest = 0.8810720268
-bestIteration = 457
-Shrink model to first 458 iterations.
-Best round: 457
-0:	learn: 0.2177206	total: 108ms	remaining: 49.3s
-50:	learn: 0.8636357	total: 7.87s	remaining: 1m 2s
-100:	learn: 0.8911608	total: 14.6s	remaining: 51.4s
-150:	learn: 0.9022454	total: 19.8s	remaining: 40.1s
-200:	learn: 0.9133385	total: 26.4s	remaining: 33.6s
-250:	learn: 0.9218503	total: 33.6s	remaining: 27.6s
-300:	learn: 0.9285818	total: 40.9s	remaining: 21.2s
-350:	learn: 0.9342433	total: 48.1s	remaining: 14.5s
-400:	learn: 0.9392873	total: 55.2s	remaining: 7.7s
-450:	learn: 0.9436206	total: 1m 2s	remaining: 825ms
-456:	learn: 0.9439817	total: 1m 2s	remaining: 0us
+✓ Saved prototype for 'List' (averaged 11 columns)
+✓ Saved prototype for 'Locality' (averaged 27 columns)
+✓ Saved prototype for 'Museum' (averaged 10 columns)
+✓ Saved prototype for 'MusicalArtist' (averaged 16 columns)
+✓ Saved prototype for 'Organisation' (averaged 19 columns)
+✓ Saved prototype for 'Person' (averaged 25 columns)
+✓ Saved prototype for 'Place' (averaged 12 columns)
+✓ Saved prototype for 'PostalCode' (averaged 22 columns)
+✓ Saved prototype for 'Region' (averaged 19 columns)
+✓ Saved prototype for 'Restaurant' (averaged 18 columns)
+✓ Saved prototype for 'Song' (averaged 13 columns)
+✓ Saved prototype for 'SportsEvent' (averaged 10 columns)
+✓ Saved prototype for 'SportsTeam' (averaged 12 columns)
+✓ Saved prototype for 'Street' (averaged 18 columns)
+✓ Saved prototype for 'TelevisionEpisode' (averaged 12 columns)
+✓ Saved prototype for 'TelevisionShow' (averaged 10 columns)
+✓ Saved prototype for 'Website' (averaged 15 columns)
+✓ Saved prototype for 'WrittenWork' (averaged 14 columns)
+✓ Saved prototype for 'address' (averaged 16 columns)
+✓ Saved prototype for 'boolean' (averaged 10 columns)
+✓ Saved prototype for 'brand' (averaged 10 columns)
+✓ Saved prototype for 'date' (averaged 26 columns)
+✓ Saved prototype for 'dateTime' (averaged 19 columns)
+✓ Saved prototype for 'day' (averaged 10 columns)
+✓ Saved prototype for 'distance' (averaged 10 columns)
+✓ Saved prototype for 'duration' (averaged 33 columns)
+✓ Saved prototype for 'energy' (averaged 10 columns)
+✓ Saved prototype for 'gender' (averaged 10 columns)
+✓ Saved prototype for 'mass' (averaged 24 columns)
+✓ Saved prototype for 'price' (averaged 21 columns)
+✓ Saved prototype for 'rating' (averaged 10 columns)
+✓ Saved prototype for 'review' (averaged 10 columns)
+✓ Saved prototype for 'time' (averaged 21 columns)
+Total execution time for prototype embeddings: 204.41 seconds
+Total execution time for cell index: 195.27 seconds
+train /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R3/gt/sotab_cta_train_round3.csv
+⚠️ Embedding failed for column 'review': the input length exceeds the context length (status code: 400) and gt_row 74157
+⚠️ Embedding failed for column 'review': the input length exceeds the context length (status code: 400) and gt_row 81293
+Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R3/gt/supplementary_files/train_snowflake-arctic-embed2:568m_AVG:True.csv
+val /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R3/gt/sotab_cta_validation_round3.csv
+Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R3/gt/supplementary_files/val_snowflake-arctic-embed2:568m_AVG:True.csv
+test /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R3/gt/sotab_cta_test_round3.csv
+Saved: /home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023/CTA-SCH-R3/gt/supplementary_files/test_snowflake-arctic-embed2:568m_AVG:True.csv
+Total execution time for data pre_processing: 22197.00 seconds
+(85561, 1024) (731, 1024) (681, 1024)
+Num classes: 46
+0:	learn: 0.2398031	test: 0.1969904	best: 0.1969904 (0)	total: 163ms	remaining: 1m 21s
+50:	learn: 0.8046931	test: 0.7660739	best: 0.7688098 (42)	total: 9.57s	remaining: 1m 24s
+100:	learn: 0.8403704	test: 0.8043776	best: 0.8071135 (96)	total: 17.4s	remaining: 1m 8s
+150:	learn: 0.8578321	test: 0.8166895	best: 0.8194254 (146)	total: 23.8s	remaining: 55.1s
+200:	learn: 0.8736048	test: 0.8207934	best: 0.8262654 (178)	total: 33.2s	remaining: 49.3s
+250:	learn: 0.8858918	test: 0.8303694	best: 0.8303694 (248)	total: 42.4s	remaining: 42.1s
+300:	learn: 0.8945837	test: 0.8372093	best: 0.8385773 (295)	total: 51.4s	remaining: 34s
+350:	learn: 0.9014210	test: 0.8317373	best: 0.8399453 (305)	total: 1m	remaining: 25.6s
+400:	learn: 0.9074075	test: 0.8290014	best: 0.8399453 (305)	total: 1m 9s	remaining: 17.1s
+450:	learn: 0.9131907	test: 0.8344733	best: 0.8399453 (305)	total: 1m 18s	remaining: 8.5s
+499:	learn: 0.9186689	test: 0.8344733	best: 0.8399453 (305)	total: 1m 27s	remaining: 0us
+bestTest = 0.8399452804
+bestIteration = 305
+Shrink model to first 306 iterations.
+Best round: 305
+0:	learn: 0.2092927	total: 143ms	remaining: 43.4s
+50:	learn: 0.8071276	total: 10s	remaining: 49.9s
+100:	learn: 0.8451976	total: 18.3s	remaining: 37s
+150:	learn: 0.8585775	total: 23.7s	remaining: 24.2s
+200:	learn: 0.8730050	total: 32.9s	remaining: 17s
+250:	learn: 0.8855673	total: 42.2s	remaining: 9.08s
+300:	learn: 0.8939930	total: 51.3s	remaining: 682ms
+304:	learn: 0.8947331	total: 52s	remaining: 0us
 
 === CatBoost Only ===
-Accuracy:         0.8729
-Micro F1:         0.8729
-Macro F1:         0.8601
-Micro Precision:  0.8729
-Macro Precision:  0.8799
-Micro Recall:     0.8729
-Macro Recall:     0.8668
-Total execution time for catboost training: 203.08 seconds
-/home/kpanag/vscode/cta_full_pipeline/catboost/model/CatBoost_ROUND1_snowflake-arctic-embed2:568m_AVG-True.cbm
-Processed 100/590 rows
-Processed 200/590 rows
-Processed 300/590 rows
-Processed 400/590 rows
-Processed 500/590 rows
+Accuracy:         0.8399
+Micro F1:         0.8399
+Macro F1:         0.8390
+Micro Precision:  0.8399
+Macro Precision:  0.8465
+Micro Recall:     0.8399
+Macro Recall:     0.8516
+
+Classification Report:
+                   precision    recall  f1-score   support
+
+            Album       0.69      0.65      0.67        17
+             Book       0.64      0.75      0.69        12
+         Category       0.93      1.00      0.97        14
+          Company       0.57      0.67      0.62        12
+          Country       1.00      0.85      0.92        27
+         Currency       1.00      1.00      1.00        17
+            Event       0.71      0.91      0.80        11
+             Film       0.87      0.93      0.90        14
+            Hotel       0.95      1.00      0.97        18
+       Identifier       1.00      0.67      0.80        15
+            Image       0.75      0.30      0.43        10
+         Language       0.92      0.92      0.92        12
+             List       1.00      0.90      0.95        10
+         Locality       0.90      0.76      0.83        25
+           Museum       0.91      1.00      0.95        10
+    MusicalArtist       0.76      0.87      0.81        15
+     Organisation       0.60      0.45      0.51        20
+           Person       0.86      0.79      0.83        24
+            Place       0.86      1.00      0.92        18
+       PostalCode       0.89      1.00      0.94        17
+           Region       0.53      0.90      0.67        10
+       Restaurant       0.88      0.70      0.78        20
+             Song       0.67      0.80      0.73        15
+      SportsEvent       0.85      1.00      0.92        11
+       SportsTeam       0.82      0.90      0.86        10
+           Street       1.00      0.86      0.92        14
+TelevisionEpisode       1.00      0.90      0.95        10
+   TelevisionShow       0.82      0.90      0.86        10
+          Website       0.56      0.91      0.69        11
+      WrittenWork       0.67      0.44      0.53        18
+          address       0.75      0.56      0.64        16
+          boolean       1.00      0.90      0.95        10
+            brand       0.71      1.00      0.83        10
+             date       1.00      1.00      1.00        18
+         dateTime       1.00      1.00      1.00        10
+              day       1.00      1.00      1.00        10
+         distance       0.83      0.71      0.77        21
+         duration       0.78      0.90      0.84        20
+           energy       0.73      1.00      0.85        11
+           gender       1.00      1.00      1.00        10
+             mass       0.94      1.00      0.97        15
+            price       0.79      0.94      0.86        16
+           rating       1.00      0.90      0.95        10
+           review       0.87      1.00      0.93        13
+             time       0.93      0.90      0.92        30
+           weight       1.00      0.64      0.78        14
+
+         accuracy                           0.84       681
+        macro avg       0.85      0.85      0.84       681
+     weighted avg       0.85      0.84      0.84       681
+
+Total execution time for catboost training: 250.15 seconds
+/home/kpanag/vscode/cta_full_pipeline/catboost/model/CatBoost_ROUND3_snowflake-arctic-embed2:568m_AVG-True.cbm
+Processed 100/681 rows
+Processed 200/681 rows
+Processed 300/681 rows
+Processed 400/681 rows
+Processed 500/681 rows
+Processed 600/681 rows
 +++ 0
-Evaluation Results: {'macro_f1': 0.8542219689861866, 'micro_f1': 0.8694915254237288, 'precision': 0.8901091817539186, 'recall': 0.8571354657927884}
-Total execution time: 14806.66 seconds
+
+F1-scores per class:
+Class: WrittenWork          | Precision: 0.9231 | Recall: 0.6667 | F1-score: 0.7742
+Class: Person               | Precision: 0.8077 | Recall: 0.8750 | F1-score: 0.8400
+Class: Language             | Precision: 0.9167 | Recall: 0.9167 | F1-score: 0.9167
+Class: Organisation         | Precision: 0.7000 | Recall: 0.7000 | F1-score: 0.7000
+Class: dateTime             | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: boolean              | Precision: 1.0000 | Recall: 0.9000 | F1-score: 0.9474
+Class: date                 | Precision: 0.9474 | Recall: 1.0000 | F1-score: 0.9730
+Class: time                 | Precision: 1.0000 | Recall: 0.8000 | F1-score: 0.8889
+Class: Hotel                | Precision: 1.0000 | Recall: 0.9444 | F1-score: 0.9714
+Class: Place                | Precision: 0.8824 | Recall: 0.8333 | F1-score: 0.8571
+Class: Country              | Precision: 1.0000 | Recall: 0.9259 | F1-score: 0.9615
+Class: Locality             | Precision: 0.8148 | Recall: 0.8800 | F1-score: 0.8462
+Class: Street               | Precision: 0.9231 | Recall: 0.8571 | F1-score: 0.8889
+Class: Image                | Precision: 1.0000 | Recall: 0.3000 | F1-score: 0.4615
+Class: PostalCode           | Precision: 0.9444 | Recall: 1.0000 | F1-score: 0.9714
+Class: review               | Precision: 0.9286 | Recall: 1.0000 | F1-score: 0.9630
+Class: Identifier           | Precision: 1.0000 | Recall: 0.8000 | F1-score: 0.8889
+Class: Currency             | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Museum               | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Region               | Precision: 0.7692 | Recall: 1.0000 | F1-score: 0.8696
+Class: Song                 | Precision: 0.8571 | Recall: 0.8000 | F1-score: 0.8276
+Class: Album                | Precision: 0.7778 | Recall: 0.8235 | F1-score: 0.8000
+Class: MusicalArtist        | Precision: 0.8750 | Recall: 0.9333 | F1-score: 0.9032
+Class: price                | Precision: 0.4444 | Recall: 1.0000 | F1-score: 0.6154
+Class: address              | Precision: 0.5000 | Recall: 0.7500 | F1-score: 0.6000
+Class: day                  | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: List                 | Precision: 1.0000 | Recall: 0.9000 | F1-score: 0.9474
+Class: energy               | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: duration             | Precision: 0.7692 | Recall: 1.0000 | F1-score: 0.8696
+Class: mass                 | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Restaurant           | Precision: 1.0000 | Recall: 0.9000 | F1-score: 0.9474
+Class: Website              | Precision: 0.5789 | Recall: 1.0000 | F1-score: 0.7333
+Class: SportsTeam           | Precision: 1.0000 | Recall: 0.9000 | F1-score: 0.9474
+Class: SportsEvent          | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: TelevisionEpisode    | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: TelevisionShow       | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Book                 | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Event                | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Category             | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: Company              | Precision: 1.0000 | Recall: 0.7500 | F1-score: 0.8571
+Class: Film                 | Precision: 0.9333 | Recall: 1.0000 | F1-score: 0.9655
+Class: rating               | Precision: 1.0000 | Recall: 0.9000 | F1-score: 0.9474
+Class: gender               | Precision: 1.0000 | Recall: 1.0000 | F1-score: 1.0000
+Class: distance             | Precision: 1.0000 | Recall: 0.3333 | F1-score: 0.5000
+Class: weight               | Precision: 1.0000 | Recall: 0.6429 | F1-score: 0.7826
+Class: brand                | Precision: 0.9000 | Recall: 0.9000 | F1-score: 0.9000
+{'macro_f1': 0.8883361931124641, 'micro_f1': 0.8781204111600588, 'precision': 0.9172428736989917, 'recall': 0.8898311546840958, 'per_class_f1': {'WrittenWork': np.float64(0.7741935483870968), 'Person': np.float64(0.84), 'Language': np.float64(0.9166666666666666), 'Organisation': np.float64(0.7), 'dateTime': np.float64(1.0), 'boolean': np.float64(0.9473684210526315), 'date': np.float64(0.972972972972973), 'time': np.float64(0.8888888888888888), 'Hotel': np.float64(0.9714285714285714), 'Place': np.float64(0.8571428571428571), 'Country': np.float64(0.9615384615384616), 'Locality': np.float64(0.8461538461538461), 'Street': np.float64(0.8888888888888888), 'Image': np.float64(0.46153846153846156), 'PostalCode': np.float64(0.9714285714285714), 'review': np.float64(0.9629629629629629), 'Identifier': np.float64(0.8888888888888888), 'Currency': np.float64(1.0), 'Museum': np.float64(1.0), 'Region': np.float64(0.8695652173913043), 'Song': np.float64(0.8275862068965517), 'Album': np.float64(0.8), 'MusicalArtist': np.float64(0.9032258064516129), 'price': np.float64(0.6153846153846154), 'address': np.float64(0.6), 'day': np.float64(1.0), 'List': np.float64(0.9473684210526315), 'energy': np.float64(1.0), 'duration': np.float64(0.8695652173913043), 'mass': np.float64(1.0), 'Restaurant': np.float64(0.9473684210526315), 'Website': np.float64(0.7333333333333333), 'SportsTeam': np.float64(0.9473684210526315), 'SportsEvent': np.float64(1.0), 'TelevisionEpisode': np.float64(1.0), 'TelevisionShow': np.float64(1.0), 'Book': np.float64(1.0), 'Event': np.float64(1.0), 'Category': np.float64(1.0), 'Company': np.float64(0.8571428571428571), 'Film': np.float64(0.9655172413793104), 'rating': np.float64(0.9473684210526315), 'gender': np.float64(1.0), 'distance': np.float64(0.5), 'weight': np.float64(0.782608695652174), 'brand': np.float64(0.9)}}
+Evaluation Results: {'macro_f1': 0.8883361931124641, 'micro_f1': 0.8781204111600588, 'precision': 0.9172428736989917, 'recall': 0.8898311546840958}
+Total execution time: 23053.69 seconds
