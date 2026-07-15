@@ -59,7 +59,7 @@ class Embedder:
         col_num = df["col"][gt_row]
         col_data = table.iloc[:40, col_num]
         column_text = col_data.dropna().astype(str).tolist()
-        column_text = column_text * 2
+        #column_text = column_text * 2
 
         if len(column_text) == 0:
             col_data = table.iloc[:, col_num]

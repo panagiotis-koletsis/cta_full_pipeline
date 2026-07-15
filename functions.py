@@ -15,18 +15,18 @@ def get_config():
         "K" : 7, #this variable is used for the topk selection either way
         "HAS_THRESHOLD" : False, # whether to apply a cosine similarity threshold for accepting predictions, or just take the best match regardless of score
         "THRESHOLD" : 0.95,
-        "AVG" : True, # whether to average row embeddings for column representation (True) or concatenate them (False)
+        "AVG" : False, # whether to average row embeddings for column representation (True) or concatenate them (False)
         "DOM_RES" : True, # Extract and use domain restrictions
-        "ROUND" : 2,
+        "ROUND" : 3,
         "BASE_PATH" : Path("/home/kpanag/vscode/cta_full_pipeline/SOTABV2forSemTab2023"),
-        #"EMBEDDING_MODEL" : "nomic-embed-text-v2-moe:latest",
-        "EMBEDDING_MODEL" : "snowflake-arctic-embed2:568m",
-        "PREPROCESS_EMB_FILES_EXISTS" : True, #avoid re running the data preprocessing for extracting the emb.   TRUE or FALSE
-        "MODEL_EXISTS" : True, #avoid re running the catboost training. TRUE or FALSE
-        "PROTPYPES_EMB_EXISTS" : True, #whether the prototype embeddings file already exists. TRUE or FALSE
-        "CELL_DICT_EXISTS" : True, #whether the cell-header dict file already exists. TRUE or FALSE
+        "EMBEDDING_MODEL" : "nomic-embed-text-v2-moe:latest",
+        #"EMBEDDING_MODEL" : "snowflake-arctic-embed2:568m",
+        "PREPROCESS_EMB_FILES_EXISTS" : False, #avoid re running the data preprocessing for extracting the emb.   TRUE or FALSE
+        "MODEL_EXISTS" : False, #avoid re running the catboost training. TRUE or FALSE
+        "PROTPYPES_EMB_EXISTS" : False, #whether the prototype embeddings file already exists. TRUE or FALSE
+        "CELL_DICT_EXISTS" : False, #whether the cell-header dict file already exists. TRUE or FALSE
         "TOP_K_EXISTS" : False, #whether the top-k results file already exists. TRUE or FALSE
-        "COS_SIM_TRHRESHOLD" : 0.92,
+        "COS_SIM_TRHRESHOLD" : 0.92, # cosine similarity threshold for considering an attribute match in the cosine similarity process 
         "BOTH_EMBS": False
         #"Train_with_functional_property" : True #whether to train the catboost model with functional property as a feature. TRUE or FALSE
     }
