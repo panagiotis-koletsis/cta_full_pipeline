@@ -131,3 +131,7 @@ allowing you to monitor progress and inspect any errors after execution.
 
 - The first run performs preprocessing and embedding generation, which may take a considerable amount of time.
 - Subsequent runs can be accelerated by enabling the corresponding `*_EXISTS` configuration flags after the required files have been generated.
+
+## License
+
+Licensed under the Apache 2.0 License.
